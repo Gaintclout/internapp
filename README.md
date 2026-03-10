@@ -1,2 +1,2 @@
-# intershipapp
+# internapp
 
