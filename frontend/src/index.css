@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-icon: 0.08;
+}
+/* 
+body {
+  background: radial-gradient(1200px 600px at 50% -10%, rgba(30,136,229,0.08), transparent),
+              linear-gradient(to bottom right, #f8fafc, #f1f5f9);
+} */
+
+@layer components{
+  .input{@apply w-full border rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:border-brand-primary/60 bg-white;}
+  .btn-primary{@apply px-6 py-2.5 rounded-full bg-brand-primary text-white font-semibold shadow hover:opacity-95 transition;}
+  .btn-ghost{@apply w-full border rounded-full px-4 py-2 hover:bg-black/5;}
+  .chip{@apply px-4 py-2 rounded-full border bg-white hover:bg-blue-50 text-gray-700; }
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}

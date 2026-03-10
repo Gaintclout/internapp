@@ -1,0 +1,43 @@
+{
+  "name": "internapp-vscode",
+  "displayName": "InternApp VS Code Extension",
+  "description": "VS Code extension for InternApp student task submission",
+  "version": "1.0.0",
+  "publisher": "gaintclout",
+  "type": "commonjs",
+  "main": "./out/extension.js",
+  "engines": {
+    "vscode": "^1.109.0"
+  },
+  "activationEvents": [
+    "onUri",
+    "onCommand:internapp.submitCode"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "internapp.submitCode",
+        "title": "InternApp: Submit Code"
+      }
+    ],
+    "uriHandler": {
+      "scheme": "vscode",
+      "authority": "gaintclout.internapp-vscode"
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "dependencies": {
+    "axios": "^1.13.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.3",
+    "@types/vscode": "^1.109.0",
+    "typescript": "^5.9.3"
+  }
+}
