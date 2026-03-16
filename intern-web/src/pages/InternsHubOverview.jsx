@@ -155,7 +155,7 @@ export default function InternsHubOverview() {
 
         <div className="relative">
           {/* CONNECTING LINE */}
-          <div className="hidden md:block absolute top-7 left-0 right-0 h-px bg-gray-300"></div>
+          <div className="hidden md:block absolute top-11 left-0 right-0 h-px bg-gray-300"></div>
 
           <div className="grid grid-cols-2 md:grid-cols-6 gap-12 text-center relative z-10 ">
             <TimelineItem icon={<UserPlus />} label="Enrollment" />
@@ -313,9 +313,10 @@ export default function InternsHubOverview() {
         </div>
 
         <div className="flex gap-6">
-          <span className="hover:text-gaint-blue cursor-pointer">Privacy Policy</span>
-          <span className="hover:text-gaint-blue cursor-pointer">Terms</span>
-          <span className="hover:text-gaint-blue cursor-pointer">Code of Conduct</span>
+<Link to="/terms" className="hover:text-gaint-blue cursor-pointer">
+  Privacy Policy
+</Link>          {/* <span className="hover:text-gaint-blue cursor-pointer">Terms</span>
+          <span className="hover:text-gaint-blue cursor-pointer">Code of Conduct</span> */}
         </div>
       </div>
 

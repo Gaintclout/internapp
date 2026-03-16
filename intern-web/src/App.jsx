@@ -3,6 +3,7 @@ import InternsHubOverview from "./pages/InternsHubOverview";
 import LearningFramework from "./pages/LearningFramework";
 import HowItWorks from "./pages/How-It-Works";
 import CollegePartnership from "./pages/college-partnership";
+import Terms from "./pages/Terms";  
 
 
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/learning-framework" element={<LearningFramework />} />
         <Route path="/how-it-works" element={<HowItWorks />} />
         <Route path="/college-partnership" element={<CollegePartnership />} />
+        <Route path="/terms" element={<Terms/>}/>
       </Routes>
     </BrowserRouter>
   );

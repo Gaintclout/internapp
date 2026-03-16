@@ -243,9 +243,11 @@ export default function HowItWorks() {
         </div>
 
         <div className="flex gap-6">
-          <span className="hover:text-gaint-blue cursor-pointer">Privacy Policy</span>
-          <span className="hover:text-gaint-blue cursor-pointer">Terms</span>
-          <span className="hover:text-gaint-blue cursor-pointer">Code of Conduct</span>
+       <Link to="/terms" className="hover:text-gaint-blue cursor-pointer">
+  Privacy Policy
+</Link>   
+          {/* <span className="hover:text-gaint-blue cursor-pointer">Terms</span>
+          <span className="hover:text-gaint-blue cursor-pointer">Code of Conduct</span> */}
         </div>
       </div>
 
