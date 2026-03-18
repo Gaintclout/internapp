@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProfileMenu from "../components/ProfileMenu";
 
-import Logo from "/src/assets/logo.png";
+import Logo from "/.../assets/logo.png";
 import QRCode from "/src/assets/QR.jpeg";
 
 export default function PaymentPage() {

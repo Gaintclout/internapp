@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LayoutDashboard, Download } from "lucide-react";
-import Logo from "/src/assets/logo.png";
+import Logo from "/.../assets/logo.png";
 import ProfileMenu from "../components/ProfileMenu";
 
 export default function CertificatePage() {

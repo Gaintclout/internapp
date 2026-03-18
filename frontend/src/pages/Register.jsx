@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Paperclip, Eye, EyeOff } from "lucide-react";
-import logo from "/src/assets/logo.png";
+import logo from "/.../assets/logo.png";
 import RegisterVector from "/src/assets/register.png";
 import api from "../api/axios";
 

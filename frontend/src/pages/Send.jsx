@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from "react";
-import logo from "/src/assets/logo.png";
+import logo from "/.../assets/logo.png";
 import OtpVector from "/src/assets/otp-2.png";
 import { useNavigate } from "react-router-dom";
 import api from "../api/axios";

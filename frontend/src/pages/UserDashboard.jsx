@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "/src/assets/logo.png";
+import logo from "/.../assets/logo.png";
 import BgImage from "/src/assets/bg-paper.png";
 import { Home, Users, BarChart2, CreditCard, FileText, LogOut } from "lucide-react";
 

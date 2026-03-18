@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "/src/assets/logo.png";
+import logo from "/.../assets/logo.png";
 import Background from "/src/assets/bg-paper.png";
 import api from "../api/axios";
 

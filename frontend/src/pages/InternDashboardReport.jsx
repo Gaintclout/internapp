@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // 
 import { Download,MessageCircle } from "lucide-react";
-import logo from "/src/assets/logo.png";
+import logo from "/.../assets/logo.png";
 import Background from "/src/assets/bg-paper.png";
 
 const reports = [
