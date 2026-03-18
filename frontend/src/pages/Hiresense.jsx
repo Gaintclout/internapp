@@ -202,7 +202,7 @@ export default function HireSense() {
  
    {/* Download PDF Button */}
    <a
-     href="http://127.0.0.1:8000/projects/materials/download/hiresense workflow.pdf"
+     href="http://159.65.149.205:8000/projects/materials/download/hiresense workflow.pdf"
      className="blink-btn flex items-center gap-2 bg-[#2563eb]
                 text-white text-sm sm:text-base font-medium
                 px-4 sm:px-6 py-2 rounded-lg shadow transition-all"

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiMentor = axios.create({
-  baseURL: "http://127.0.0.1:8000",
+  baseURL: "http://159.65.149.205:8000/",
 });
 
 apiMentor.interceptors.request.use((config) => {

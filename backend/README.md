@@ -13,7 +13,7 @@ cp .env.example .env  # edit if needed
 
 ```
 
-Open http://127.0.0.1:8000/health
+Open http://159.65.149.205:8000/health
 
 ## Default DB
 - Uses SQLite file `internapp.db` by default.

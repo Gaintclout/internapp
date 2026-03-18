@@ -28,7 +28,7 @@ export default function PaymentPage() {
 
     try {
 
-      const res = await fetch("http://127.0.0.1:8000/payments/project", {
+      const res = await fetch("http://159.65.149.205:8000/payments/project", {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${token}`
@@ -51,7 +51,7 @@ export default function PaymentPage() {
 
     const token = localStorage.getItem("token");
 
-    await fetch("http://127.0.0.1:8000/payments/verify", {
+    await fetch("http://159.65.149.205:8000/payments/verify", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

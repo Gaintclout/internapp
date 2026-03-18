@@ -20,7 +20,7 @@ export default function Spamshield() {
         content: "Base64 or Blob data here (optional)",
       };
 
-      const res = await fetch("http://localhost:8000/api/save-file", {
+      const res = await fetch("http://159.65.149.205:8000/api/save-file", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(fileData),
@@ -229,7 +229,7 @@ export default function Spamshield() {
    
      {/* Download PDF Button */}
      <a
-       href="http://127.0.0.1:8000/projects/materials/download/spamshieldX.pdf"
+       href="http://159.65.149.205:8000/projects/materials/download/spamshieldX.pdf"
        className="blink-btn flex items-center gap-2 bg-[#2563eb]
                   text-white text-sm sm:text-base font-medium
                   px-4 sm:px-6 py-2 rounded-lg shadow transition-all"

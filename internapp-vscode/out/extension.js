@@ -5,7 +5,7 @@ exports.deactivate = deactivate;
 const vscode = require("vscode");
 const axios_1 = require("axios");
 const TOKEN_KEY = "internapp_token";
-const BASE_URL = "http://127.0.0.1:8000";
+const BASE_URL = "http://159.65.149.205:8000";
 axios_1.default.defaults.baseURL = BASE_URL;
 /* ===============================
    JWT CHECK

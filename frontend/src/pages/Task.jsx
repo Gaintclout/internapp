@@ -22,7 +22,7 @@ export default function TaskExecution() {
       const token = localStorage.getItem("token");
 
       const res = await axios.post(
-        "http://localhost:8000/submissions/run",
+        "http://159.65.149.205:8000/submissions/run",
         {
           task_id: taskId,
           code: code,
@@ -52,7 +52,7 @@ export default function TaskExecution() {
       formData.append("code", code);
 
       const res = await axios.post(
-        "http://localhost:8000/submissions",
+        "http://159.65.149.205:8000/submissions",
         formData,
         {
           headers: { Authorization: `Bearer ${token}` }

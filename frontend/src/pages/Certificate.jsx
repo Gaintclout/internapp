@@ -21,7 +21,7 @@ export default function CertificatePage() {
         }
 
         const res = await fetch(
-          "http://127.0.0.1:8000/certificate/download",
+          "http://159.65.149.205:8000/certificate/download",
           {
             headers: {
               Authorization: `Bearer ${token}`,
