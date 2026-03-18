@@ -39,7 +39,7 @@ class Settings(BaseSettings):
     MAIL_SERVER: str = "smtp.gmail.com"
     MAIL_SSL_TLS: bool = False
     MAIL_STARTTLS: bool = True
-    FRONTEND_URL: str = "http://localhost:3000"  # URL where frontend is hosted
+    FRONTEND_URL: str = "http://159.65.149.205:5173"  # URL where frontend is hosted
     JUDGE0_URL: str = Field(
         default="http://localhost:2358",
         env="JUDGE0_URL"
