@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "/.../assets/logo.png";
+import logo from "../assets/logo.png";
 import BgImage from "/src/assets/bg-paper.png";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";

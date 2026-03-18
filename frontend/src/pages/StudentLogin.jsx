@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-import logo from "/.../assets/logo.png";
+import logo from "../assets/logo.png";
 import LoginVector from "/src/assets/login.png";
 // import LinkedinIcon from "/src/assets/linkedin.png";
 import { GoogleLogin } from "@react-oauth/google";

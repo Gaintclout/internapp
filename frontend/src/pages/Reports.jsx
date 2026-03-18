@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Download } from "lucide-react";
 import { useNavigate } from "react-router-dom"; // ✅ Added navigation
-import logo from "/.../assets/logo.png";
+import logo from "../assets/logo.png";
 import BgImage from "/src/assets/bg-paper.png";
 
 export default function QuincenaReport() {

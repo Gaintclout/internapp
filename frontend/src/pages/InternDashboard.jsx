@@ -1,7 +1,7 @@
 
 
 import React, { useState, useEffect } from "react";
-import logo from "/.../assets/logo.png";
+import logo from "../assets/logo.png";
 import { Download } from "lucide-react";
 import Background from "/src/assets/bg-paper.png";
 import { useNavigate } from "react-router-dom";

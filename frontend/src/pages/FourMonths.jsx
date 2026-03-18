@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import api from "../api/axios";
 import { useNavigate } from "react-router-dom";
-import logo from "/.../assets/logo.png";
+import logo from "../assets/logo.png";
 import ProfileMenu from "../components/ProfileMenu";
 
 export default function FourMonths({ hideHeader = false }) {

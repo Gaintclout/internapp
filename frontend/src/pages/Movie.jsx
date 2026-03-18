@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from "/.../assets/logo.png";
+import logo from "../assets/logo.png";
 import BgImage from "/src/assets/bg-paper.png";
 import { Download } from "lucide-react";
 import "keen-slider/keen-slider.min.css";
