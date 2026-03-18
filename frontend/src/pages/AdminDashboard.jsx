@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo.png";
 import {
   Home,
   Users,
@@ -70,7 +70,7 @@ const StatCard = ({ color, value, label, icon: Icon }) => (
 
       {/* ================= MOBILE HEADER ================= */}
       <div className="md:hidden flex items-center justify-between px-4 py-3 bg-white border-b z-40">
-        <img src={Logo} alt="GAINT" className="h-8" />
+        <img src={logo} alt="GAINT" className="h-8" />
         <button onClick={() => setMobileMenuOpen(true)}>
           <Menu size={24} />
         </button>
@@ -116,7 +116,7 @@ const StatCard = ({ color, value, label, icon: Icon }) => (
       {/* ================= DESKTOP SIDEBAR ================= */}
       <aside className="hidden md:flex md:w-64 flex-col border-r border-gray-100 bg-white">
         <div className="flex items-center gap-3 px-6 py-6">
-          <img src={Logo} alt="GAINT" className="h-9" />
+          <img src={logo} alt="GAINT" className="h-9" />
         </div>
 
         <nav className="px-2 py-4 text-sm flex flex-col gap-1">

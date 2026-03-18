@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-import Logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo.png";
 import LoginVector from "/src/assets/login.png";
 // import LinkedinIcon from "/src/assets/linkedin.png";
 import { GoogleLogin } from "@react-oauth/google";
@@ -128,7 +128,7 @@ const handleGoogleError = () => {
         
         {/* Left Section */}
         <div className="hidden md:flex w-1/2 flex-col justify-center items-center bg-white p-10">
-          <img src={Logo} alt="GAINT Logo" className="w-32 mb-8 self-start" />
+          <img src={logo} alt="GAINT logo" className="w-32 mb-8 self-start" />
           <img src={LoginVector} alt="Login Illustration" className="w-[85%] max-w-md" />
         </div>
 

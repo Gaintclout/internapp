@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from "react";
-import Logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo.png";
 import OtpVector from "/src/assets/otp-2.png";
 import { useNavigate } from "react-router-dom";
 import api from "../api/axios";
@@ -142,7 +142,7 @@ export default function OTPVerification() {
 
       {/* LOGO */}
       <div className="absolute top-6 left-6">
-        <img src={Logo} alt="GAINT Logo" className="w-32" />
+        <img src={logo} alt="GAINT logo" className="w-32" />
       </div>
 
       {/* LEFT SIDE */}

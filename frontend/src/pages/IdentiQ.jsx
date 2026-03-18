@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo.png";
 import BgImage from "/src/assets/bg-paper.png";
 import { Download } from "lucide-react";
 import api from "../api/axios";
@@ -125,8 +125,8 @@ useEffect(() => {
      
                {/* Logo (left) */}
                <img
-                 src={Logo}
-                 alt="GAINT Logo"
+                 src={logo}
+                 alt="GAINT logo"
                  className="w-32"
                />
      

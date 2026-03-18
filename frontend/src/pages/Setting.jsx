@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Upload, LogOut } from "lucide-react";
-import Logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo.png";
 import ProfileMenu from "../components/ProfileMenu";
 import api from "../api/axios";
 import { useNavigate } from "react-router-dom";
@@ -114,7 +114,7 @@ const handleUpdate = async (e) => {
       <aside className="w-64 bg-white shadow-sm p-6 flex flex-col justify-between">
         <div>
           <div className="flex items-center gap-2 mb-8">
-            <img src={Logo} className="w-15 h-10" />
+            <img src={logo} className="w-15 h-10" />
             {/* <span className="font-semibold">GAINT</span> */}
           </div>
           <p className="text-blue-600 font-medium">⚙ Settings</p>

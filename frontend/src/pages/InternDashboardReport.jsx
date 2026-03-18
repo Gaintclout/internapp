@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // 
 import { Download,MessageCircle } from "lucide-react";
-import Logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo.png";
 import Background from "/src/assets/bg-paper.png";
 
 const reports = [
@@ -37,7 +37,7 @@ export default function InternDashboardReports() {
        >
             {/* Top Logo */}
               <div className="absolute top-4 left-8 flex items-center space-x-2">
-                <img src={Logo} alt="GAINT Logo" className="w-13 h-8" />
+                <img src={logo} alt="GAINT logo" className="w-13 h-8" />
               </div>
 
  <div className="absolute top-6 right-10 flex items-center space-x-2 text-sm text-gray-600">

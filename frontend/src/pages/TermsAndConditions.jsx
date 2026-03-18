@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo.png";
 
 export default function TermsAndConditions() {
   return (
@@ -7,7 +7,7 @@ export default function TermsAndConditions() {
       {/* Header */}
       <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-xl p-8">
         <div className="flex items-center gap-4 mb-6">
-          <img src={Logo} alt="GAINT Logo" className="w-24" />
+          <img src={logo} alt="GAINT logo" className="w-24" />
           <h1 className="text-3xl font-bold text-blue-700">
             Terms & Conditions
           </h1>

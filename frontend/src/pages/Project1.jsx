@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import Logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo.png";
 import BgImage from "/src/assets/bg-paper.png";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../api/axios";
@@ -68,7 +68,7 @@ export default function Project1() {
 >
 
       <div className="absolute top-4 left-6 right-6 flex items-center justify-between z-20">
-        <img src={Logo} alt="GAINT Logo" className="w-32" />
+        <img src={logo} alt="GAINT logo" className="w-32" />
         <ProfileMenu />
       </div>
 

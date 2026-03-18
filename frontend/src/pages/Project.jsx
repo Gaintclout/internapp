@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo.png";
 import BgImage from "/src/assets/bg-paper.png";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"; 
@@ -115,8 +115,8 @@ const getProjectSuggestions = async () => {
    
              {/* Logo (left) */}
              <img
-               src={Logo}
-               alt="GAINT Logo"
+               src={logo}
+               alt="GAINT logo"
                className="w-32"
              />
    

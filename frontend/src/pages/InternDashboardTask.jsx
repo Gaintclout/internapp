@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo.png";
 import Background from "/src/assets/bg-paper.png";
 import api from "../api/axios";
 
@@ -69,7 +69,7 @@ export default function InternDashboardTasks() {
       style={{ backgroundImage: `url(${Background})` }}
     >
       {/* Logo */}
-      <img src={Logo} alt="GAINT Logo" className="absolute top-4 left-6 w-28" />
+      <img src={logo} alt="GAINT logo" className="absolute top-4 left-6 w-28" />
 
       {/* USER PROFILE */}
       <div

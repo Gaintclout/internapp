@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import api from "../api/axios";
 import { useNavigate } from "react-router-dom";
-import Logo from "/src/assets/logo.png";
+import logo from "/.../assets/logo.png";
 import ProfileMenu from "../components/ProfileMenu";
 
 export default function FourMonths({ hideHeader = false }) {
@@ -117,7 +117,7 @@ export default function FourMonths({ hideHeader = false }) {
 
 {!hideHeader && (
   <header className="flex items-center justify-between px-14 py-1">
-    <img src={Logo} alt="GAINT" className="h-10" />
+    <img src={logo} alt="GAINT" className="h-10" />
     <ProfileMenu />
   </header>
 )}

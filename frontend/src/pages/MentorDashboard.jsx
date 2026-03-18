@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import Logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo.png";
 // import api from "../api/axios";
 import apiMentor from "../api/apiMentor";
 import { useNavigate } from "react-router-dom";
@@ -114,7 +114,7 @@ useEffect(() => {
       >
         <div>
           <div className="flex items-center justify-center h-20 border-b">
-            <img src={Logo} alt="GAINT Logo" className="w-28" />
+            <img src={logo} alt="GAINT logo" className="w-28" />
           </div>
 
           <nav className="mt-6 space-y-1 px-4">

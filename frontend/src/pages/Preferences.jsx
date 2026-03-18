@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo.png";
 import BgImage from "/src/assets/bg-paper.png";
 import ProfileMenu from "../components/ProfileMenu";
 
@@ -35,7 +35,7 @@ export default function PreferenceSelection() {
         {/* ✅ OVERLAY HEADER INSIDE BACKGROUND */}
         <div className="absolute top-4 left-6 right-6 flex items-center justify-between z-20">
           {/* Logo (left) */}
-          <img src={Logo} alt="GAINT Logo" className="w-32" />
+          <img src={logo} alt="GAINT logo" className="w-32" />
 
           {/* Profile Menu (right) */}
           <ProfileMenu />

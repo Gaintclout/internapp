@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo.png";
 import BgImage from "/src/assets/bg-paper.png";
 import { Home, Users, BarChart2, CreditCard, FileText, LogOut } from "lucide-react";
 
@@ -24,7 +24,7 @@ export default function AdminUser() {
       {/* Sidebar */}
       <aside className="relative z-10 hidden md:flex md:w-64 flex-col border-r border-gray-100 bg-white">
         <div className="flex items-center gap-3 px-6 py-6">
-          <img src={Logo} alt="GAINT" className="h-9 w-auto" />
+          <img src={logo} alt="GAINT" className="h-9 w-auto" />
         </div>
         <nav className="px-2 py-4 text-sm">
           <button className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-50 w-full text-left text-gray-700"><Home size={18} /> Dashboard</button>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Download } from "lucide-react";
 import { useNavigate } from "react-router-dom"; // ✅ Added navigation
-import Logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo.png";
 import BgImage from "/src/assets/bg-paper.png";
 
 export default function QuincenaReport() {
@@ -50,7 +50,7 @@ export default function QuincenaReport() {
     >
       {/* ✅ Header */}
       <div className="absolute top-2 left-0 right-0 flex items-center justify-between w-full max-w-6xl mx-auto px-4 sm:px-8">
-        <img src={Logo} alt="GAINT Logo" className="w-16 sm:w-24 md:w-32" />
+        <img src={logo} alt="GAINT logo" className="w-16 sm:w-24 md:w-32" />
         <h2 className="text-base sm:text-xl md:text-2xl font-semibold text-[#2563eb]">
           Quincena Report
         </h2>

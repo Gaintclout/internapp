@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo.png";
 import { MessageCircle } from "lucide-react";
 import Background from "/src/assets/bg-paper.png";
 import { useNavigate } from "react-router-dom";
@@ -58,8 +58,8 @@ useEffect(() => {
     >
       {/* Logo */}
       <img
-        src={Logo}
-        alt="GAINT Logo"
+        src={logo}
+        alt="GAINT logo"
         className="absolute top-4 left-4 sm:top-6 sm:left-6 w-14 sm:w-20 md:w-28 lg:w-32"
       />
 

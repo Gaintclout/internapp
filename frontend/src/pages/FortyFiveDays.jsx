@@ -4,7 +4,7 @@
 import React, { useEffect, useState } from "react";
 import api from "../api/axios";
 import { useNavigate } from "react-router-dom";
-import Logo from "/src/assets/logo.png";
+import logo from "/.../assets/logo.png";
 import ProfileMenu from "../components/ProfileMenu";
 
 export default function FortyFiveDays({ hideHeader = false }) {
@@ -108,7 +108,7 @@ export default function FortyFiveDays({ hideHeader = false }) {
     <div className="min-h-[calc(70vh-80px)]">
       {!hideHeader && (
         <header className="flex items-center justify-between px-14 py-4">
-          <img src={Logo} alt="GAINT" className="h-10" />
+          <img src={logo} alt="GAINT" className="h-10" />
           <ProfileMenu />
         </header>
       )}

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { GraduationCap, User, Users } from "lucide-react";
-import Logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo.png";
 import BgImage from "/src/assets/bg-paper.png";
 
 export default function Dashboard() {
@@ -35,8 +35,8 @@ export default function Dashboard() {
       ></div>
 
       <img
-        src={Logo}
-        alt="GAINT Logo"
+        src={logo}
+        alt="GAINT logo"
         className="absolute top-4 left-4 sm:top-6 sm:left-6 w-16 sm:w-24 md:w-28 lg:w-32"
       />
 

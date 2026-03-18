@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo.png";
 import BgImage from "/src/assets/bg-paper.png";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
@@ -82,8 +82,8 @@ export default function TaskExecution() {
     >
       {/* Logo */}
       <img
-        src={Logo}
-        alt="GAINT Logo"
+        src={logo}
+        alt="GAINT logo"
         className="absolute top-6 left-6 w-28 md:w-32"
       />
 

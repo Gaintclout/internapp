@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo.png";
 import {
   Home,
   Users,
@@ -110,7 +110,7 @@ export default function AdminDashboardProject() {
           />
           <aside className="w-64 bg-white h-full shadow-xl flex flex-col">
             <div className="flex items-center justify-between px-6 py-4 border-b">
-              <img src={Logo} alt="GAINT" className="h-8" />
+              <img src={logo} alt="GAINT" className="h-8" />
               <button onClick={() => setMobileMenuOpen(false)}>
                 <X size={22} />
               </button>

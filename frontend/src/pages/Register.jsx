@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Paperclip, Eye, EyeOff } from "lucide-react";
-import Logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo.png";
 import RegisterVector from "/src/assets/register.png";
 import api from "../api/axios";
 
@@ -201,7 +201,7 @@ const handleFileChange = (e, setter, previousFile) => {
         {/* Left Section */}
         <div className="hidden md:flex w-1/2 flex-col bg-white p-10">
           <div className="flex justify-start mb-6">
-            <img src={Logo} alt="GAINT Logo" className="w-28 md:w-32" />
+            <img src={logo} alt="GAINT logo" className="w-28 md:w-32" />
           </div>
           <div className="flex-grow flex justify-center items-center">
             <img

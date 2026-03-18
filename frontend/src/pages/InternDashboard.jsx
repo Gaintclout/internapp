@@ -1,7 +1,7 @@
 
 
 import React, { useState, useEffect } from "react";
-import Logo from "/src/assets/logo.png";
+import logo from "/src/assets/logo.png";
 import { Download } from "lucide-react";
 import Background from "/src/assets/bg-paper.png";
 import { useNavigate } from "react-router-dom";
@@ -169,7 +169,7 @@ export default function InternDashboard() {
     >
       {/* LOGO */}
       <img
-        src={Logo}
+        src={logo}
         alt="GAINT Logo"
         className="absolute top-4 left-6 w-28"
       />
