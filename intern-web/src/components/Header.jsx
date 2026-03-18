@@ -52,7 +52,7 @@ export default function Header() {
           </NavLink>
 
           <a
-          href="http://localhost:5173"
+          href="http://159.65.149.205:5173/"
           target="_blank"
           rel="noopener noreferrer"
           className={navClass}
