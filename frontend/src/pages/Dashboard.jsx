@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { GraduationCap, User, Users } from "lucide-react";
-import Logo from "/src/assets/Logo.png";
+import Logo from "/src/assets/logo.png";
 import BgImage from "/src/assets/bg-paper.png";
 
 export default function Dashboard() {

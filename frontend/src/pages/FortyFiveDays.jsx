@@ -4,7 +4,7 @@
 import React, { useEffect, useState } from "react";
 import api from "../api/axios";
 import { useNavigate } from "react-router-dom";
-import Logo from "/src/assets/Logo.png";
+import Logo from "/src/assets/logo.png";
 import ProfileMenu from "../components/ProfileMenu";
 
 export default function FortyFiveDays({ hideHeader = false }) {

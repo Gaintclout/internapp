@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import Logo from "/src/assets/Logo.png";
+import Logo from "/src/assets/logo.png";
 // import api from "../api/axios";
 import apiMentor from "../api/apiMentor";
 import { useNavigate } from "react-router-dom";

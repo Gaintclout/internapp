@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Upload, LogOut } from "lucide-react";
-import Logo from "/src/assets/Logo.png";
+import Logo from "/src/assets/logo.png";
 import ProfileMenu from "../components/ProfileMenu";
 import api from "../api/axios";
 import { useNavigate } from "react-router-dom";
