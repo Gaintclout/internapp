@@ -1,98 +1,178 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
 import BgImage from "/src/assets/bg-paper.png";
-import { Home, Users, BarChart2, CreditCard, FileText, LogOut } from "lucide-react";
+import {
+  Home,
+  Users,
+  BarChart2,
+  CreditCard,
+  FileText,
+  LogOut,
+} from "lucide-react";
+import api from "../api/axios";
+import { useNavigate } from "react-router-dom";
 
 export default function AdminUser() {
-  const rows = [
-    { name: "Rohini", email: "rohi@gaint.com", college: "Mallareddy", type: "Fast Track", progress: 60 },
-    { name: "Nikitha", email: "rohi@gaint.com", college: "Mallareddy", type: "45", progress: 80 },
-    { name: "Nikhitha", email: "rohi@gaint.com", college: "Mallareddy", type: "Fast Track", progress: 60 },
-    { name: "Rohini", email: "rohi@gaint.com", college: "Mallareddy", type: "45", progress: 45 },
-    { name: "Nikitha", email: "rohi@gaint.com", college: "Mallareddy", type: "Fast Track", progress: 60 },
-    { name: "Nikitha", email: "rohi@gaint.com", college: "Mallareddy", type: "45", progress: 60 },
-  ];
+  const navigate = useNavigate();
+
+  const [users, setUsers] = useState([]);
+  const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  // 🔐 ADMIN AUTH CHECK
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const user = JSON.parse(localStorage.getItem("user") || "{}");
+
+    if (!token || user.role !== "admin") {
+      navigate("/login");
+    }
+  }, [navigate]);
+
+  // 📦 FETCH USERS
+  const fetchUsers = async () => {
+    try {
+      const token = localStorage.getItem("token");
+
+      const res = await api.get("/admin/users", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      setUsers(res?.data || []);
+    } catch (err) {
+      console.error("User fetch error:", err);
+      alert("Failed to load users");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
+
+  // 🔍 FILTER SEARCH
+  const filteredUsers = users.filter((u) =>
+    `${u.name} ${u.email} ${u.college}`
+      .toLowerCase()
+      .includes(search.toLowerCase())
+  );
+
+  // 🚪 LOGOUT
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate("/login");
+  };
+
+  if (loading) {
+    return (
+      <div className="h-screen flex items-center justify-center">
+        Loading users...
+      </div>
+    );
+  }
 
   return (
-    <div className="min-h-screen bg-[#f7f9fc] text-gray-800 flex relative overflow-hidden">
-      {/* Background watermark */}
+    <div className="min-h-screen bg-[#f7f9fc] flex relative">
+
+      {/* Background */}
       <div
-        className="pointer-events-none absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${BgImage})`, transform: "rotate(-25deg)", transformOrigin: "center" }}
+        className="absolute inset-0 bg-cover bg-center opacity-10"
+        style={{ backgroundImage: `url(${BgImage})` }}
       />
 
       {/* Sidebar */}
-      <aside className="relative z-10 hidden md:flex md:w-64 flex-col border-r border-gray-100 bg-white">
-        <div className="flex items-center gap-3 px-6 py-6">
-          <img src={logo} alt="GAINT" className="h-9 w-auto" />
-        </div>
-        <nav className="px-2 py-4 text-sm">
-          <button className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-50 w-full text-left text-gray-700"><Home size={18} /> Dashboard</button>
-          <button className="flex items-center gap-3 px-4 py-3 rounded-xl bg-blue-50 text-blue-600 font-medium w-full text-left"><Users size={18} /> User</button>
-          <button className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-50 w-full text-left text-gray-700"><BarChart2 size={18} /> Project Management</button>
-          <button className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-50 w-full text-left text-gray-700"><CreditCard size={18} /> Payment & Reports</button>
-          <button className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-50 w-full text-left text-gray-700"><FileText size={18} /> Mentors</button>
-          <div className="mt-auto" />
-          <button className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-red-50 text-red-600 w-full text-left"><LogOut size={18} /> Logout</button>
-        </nav>
-        <div className="mt-auto px-6 py-6 text-[10px] text-gray-400">Gaint Interns Admin Dashboard<br/>© 2025 All Rights Reserved</div>
+      <aside className="hidden md:flex md:w-64 flex-col bg-white border-r p-4 z-10">
+        <img src={logo} className="w-28 mb-6" />
+
+        <button className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded">
+          <Home size={18} /> Dashboard
+        </button>
+
+        <button className="flex items-center gap-2 p-2 bg-blue-50 text-blue-600 rounded">
+          <Users size={18} /> Users
+        </button>
+
+        <button className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded">
+          <BarChart2 size={18} /> Projects
+        </button>
+
+        <button className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded">
+          <CreditCard size={18} /> Payments
+        </button>
+
+        <button className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded">
+          <FileText size={18} /> Mentors
+        </button>
+
+        <button
+          onClick={handleLogout}
+          className="mt-auto flex items-center gap-2 text-red-500 p-2 hover:bg-red-50 rounded"
+        >
+          <LogOut size={18} /> Logout
+        </button>
       </aside>
 
-      {/* Main */}
-      <main className="relative z-10 flex-1">
-        {/* Top bar */}
-        <div className="flex items-center justify-between gap-4 p-4 md:p-6">
-          <div className="flex-1 max-w-3xl">
-            <div className="relative">
-              <input className="w-full rounded-xl border border-gray-200 bg-white py-3 pl-10 pr-4 text-sm outline-none placeholder:text-gray-400" placeholder="Search here" />
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">🔍</span>
-            </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <span className="text-sm text-gray-500">Hello, <span className="font-medium">Samantha</span></span>
-            <div className="h-9 w-9 rounded-full bg-gray-200 overflow-hidden flex items-center justify-center">🙂</div>
-          </div>
-        </div>
+      {/* MAIN */}
+      <main className="flex-1 z-10 p-6">
 
-        {/* Heading */}
-        <div className="px-4 md:px-6">
-          <h2 className="text-2xl md:text-3xl font-bold">User</h2>
+        {/* Top */}
+        <div className="flex justify-between items-center mb-6">
+          <input
+            type="text"
+            placeholder="Search users..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="border px-4 py-2 rounded-lg w-full max-w-md"
+          />
+
+          <p className="ml-4">
+            Admin Panel
+          </p>
         </div>
 
         {/* Table */}
-        <div className="px-4 md:px-6 mt-6 pb-10">
-          <div className="overflow-x-auto bg-white border border-gray-100 rounded-2xl shadow-sm">
-            <table className="min-w-full text-sm">
-              <thead>
-                <tr className="bg-blue-600 text-white">
-                  <th className="px-4 py-3 text-left font-medium">Name</th>
-                  <th className="px-4 py-3 text-left font-medium">Email</th>
-                  <th className="px-4 py-3 text-left font-medium">College</th>
-                  <th className="px-4 py-3 text-left font-medium">Internship Type</th>
-                  <th className="px-4 py-3 text-left font-medium">Progress</th>
-                  <th className="px-4 py-3 text-left font-medium">Actions</th>
+        <div className="bg-white rounded-xl shadow overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead className="bg-blue-600 text-white">
+              <tr>
+                <th className="p-3 text-left">Name</th>
+                <th className="p-3 text-left">Email</th>
+                <th className="p-3 text-left">College</th>
+                <th className="p-3 text-left">Internship</th>
+                <th className="p-3 text-left">Progress</th>
+                <th className="p-3 text-left">Actions</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {filteredUsers.length === 0 ? (
+                <tr>
+                  <td colSpan="6" className="p-6 text-center text-gray-500">
+                    No users found
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                {rows.map((r, i) => (
-                  <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                    <td className="px-4 py-3 text-gray-700">{r.name}</td>
-                    <td className="px-4 py-3 text-gray-600">{r.email}</td>
-                    <td className="px-4 py-3 text-gray-600">{r.college}</td>
-                    <td className="px-4 py-3 text-gray-600">{r.type}</td>
-                    <td className="px-4 py-3 text-gray-700">{r.progress}%</td>
-                    <td className="px-4 py-3">
-                      <button className="text-blue-600 hover:underline">Reassign</button>
+              ) : (
+                filteredUsers.map((u, i) => (
+                  <tr key={u.id || i} className="border-t">
+                    <td className="p-3">{u.name}</td>
+                    <td className="p-3">{u.email}</td>
+                    <td className="p-3">{u.college}</td>
+                    <td className="p-3">{u.internship_type}</td>
+                    <td className="p-3">{u.progress || 0}%</td>
+                    <td className="p-3">
+                      <button className="text-blue-600 hover:underline">
+                        Reassign
+                      </button>
                     </td>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                ))
+              )}
+            </tbody>
+          </table>
         </div>
+
       </main>
     </div>
   );
 }
-
-

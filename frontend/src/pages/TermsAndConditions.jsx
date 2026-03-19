@@ -3,20 +3,29 @@ import logo from "../assets/logo.png";
 
 export default function TermsAndConditions() {
   return (
-    <div className="min-h-screen  px-6 py-10">
-      {/* Header */}
-      <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-xl p-8">
-        <div className="flex items-center gap-4 mb-6">
-          <img src={logo} alt="GAINT logo" className="w-24" />
-          <h1 className="text-3xl font-bold text-blue-700">
-            Terms & Conditions
-          </h1>
+    <div className="min-h-screen bg-gray-100 px-4 py-10">
+
+      <div className="max-w-5xl mx-auto bg-white shadow-xl rounded-2xl p-6 md:p-10">
+
+        {/* HEADER */}
+        <div className="flex items-center gap-4 mb-8 border-b pb-4">
+          <img src={logo} alt="logo" className="w-20 md:w-24" />
+
+          <div>
+            <h1 className="text-2xl md:text-3xl font-bold text-blue-700">
+              Terms & Conditions
+            </h1>
+            <p className="text-gray-500 text-sm">
+              GAINT Clout Technologies Pvt. Ltd.
+            </p>
+          </div>
         </div>
 
-        {/* Content */}
-        <div className="space-y-6 text-gray-700 text-sm leading-relaxed">
+        {/* CONTENT */}
+        <div className="space-y-6 text-gray-700 text-sm md:text-base leading-relaxed">
+
           <section>
-            <h2 className="text-lg font-semibold text-gray-800 mb-2">
+            <h2 className="text-lg font-semibold text-gray-800 mb-1">
               1. Acceptance of Terms
             </h2>
             <p>
@@ -26,7 +35,7 @@ export default function TermsAndConditions() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-gray-800 mb-2">
+            <h2 className="text-lg font-semibold text-gray-800 mb-1">
               2. User Responsibilities
             </h2>
             <p>
@@ -36,7 +45,7 @@ export default function TermsAndConditions() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-gray-800 mb-2">
+            <h2 className="text-lg font-semibold text-gray-800 mb-1">
               3. Intellectual Property
             </h2>
             <p>
@@ -46,7 +55,7 @@ export default function TermsAndConditions() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-gray-800 mb-2">
+            <h2 className="text-lg font-semibold text-gray-800 mb-1">
               4. Certificates
             </h2>
             <p>
@@ -56,7 +65,7 @@ export default function TermsAndConditions() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-gray-800 mb-2">
+            <h2 className="text-lg font-semibold text-gray-800 mb-1">
               5. Termination
             </h2>
             <p>
@@ -66,19 +75,23 @@ export default function TermsAndConditions() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold text-gray-800 mb-2">
+            <h2 className="text-lg font-semibold text-gray-800 mb-1">
               6. Governing Law
             </h2>
             <p>
               These terms are governed by the laws of India.
             </p>
           </section>
+
         </div>
 
-        {/* Footer */}
-        <div className="mt-10 text-xs text-gray-500 text-center">
-          © {new Date().getFullYear()} GAINT Clout Technologies Pvt. Ltd.
+        {/* FOOTER */}
+        <div className="mt-10 pt-4 border-t text-xs text-gray-500 text-center">
+          © {new Date().getFullYear()} GAINT Clout Technologies Pvt. Ltd.  
+          <br />
+          All Rights Reserved.
         </div>
+
       </div>
     </div>
   );
