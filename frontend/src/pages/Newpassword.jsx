@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import OtpVector from "/src/assets/otp.png";
+import OtpVector from "../assets/otp.png";
 import { useNavigate } from "react-router-dom";
 import api from "../api/axios";
 import { Eye, EyeOff } from "lucide-react";

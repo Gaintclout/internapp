@@ -92,11 +92,11 @@ export default function AdminDashboardProject() {
 
   return (
 
-    <div className="min-h- bg-[#ffffff] flex flex-col md:flex-row">
+    <div className="min-h-screen bg-[#ffffff] flex flex-col md:flex-row">
 
       {/* MOBILE HEADER */}
 
-<div className="md:hidden flex items-center justify-between px-4 py-3 bg-white border-b z-30 relative">        <img src={Logo} alt="GAINT" className="h-8" />
+<div className="md:hidden flex items-center justify-between px-4 py-3 bg-white border-b z-30 relative">        <img src={logo} alt="GAINT" className="h-8" />
         <button onClick={() => setMobileMenuOpen(true)}>
           <Menu size={24} />
         </button>
@@ -143,7 +143,7 @@ export default function AdminDashboardProject() {
       <aside className="hidden md:flex md:w-64 flex-col border-r bg-white">
 
         <div className="flex items-center gap-3 px-6 py-6">
-          <img src={Logo} alt="GAINT" className="h-9" />
+          <img src={logo} alt="GAINT" className="h-9" />
         </div>
 
         <nav className="px-2 py-4 flex flex-col gap-1 text-sm">

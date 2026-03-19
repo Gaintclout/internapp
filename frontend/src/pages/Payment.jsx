@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import ProfileMenu from "../components/ProfileMenu";
 
 import logo from "../assets/logo.png";
-import QRCode from "/src/assets/QR.jpeg";
+import QRCode from "../assets/QR.jpeg";  
 
 export default function PaymentPage() {
 
@@ -108,7 +108,7 @@ export default function PaymentPage() {
 
         {/* LOGO */}
         <img
-          src={Logo}
+          src={logo}
           alt="GAINT Logo"
           className="w-28 md:w-36"
         />
