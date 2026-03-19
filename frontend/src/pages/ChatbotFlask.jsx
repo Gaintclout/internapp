@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import logo from "../assets/logo.png";
-import BgImage from "/src/assets/bg-paper.png";
+import BgImage from "../assets/bg-paper.png";
+import chatbotFlaskVideo from "../assets/chatbotflask.mp4"
 import { Download } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/axios";
-import { Link } from "react-router-dom";
 import ProfileMenu from "../components/ProfileMenu";
 
 export default function ChatbotF() {
@@ -35,25 +35,6 @@ export default function ChatbotF() {
     }
   };
 
-  // ===========================
-  // 🔹 Connect project selection
-  // ===========================
-  // useEffect(() => {
-  //   saveProjectSelection();
-  // }, []);
-
-  // const saveProjectSelection = async () => {
-  //   try {
-  //     const response = await api.get(
-  //       "/projects/materials/download/gpt 3.5 flask workflow.pdf",
-  //       { project_name: "Chatbot Using Flask" }
-  //     );
-
-  //     console.log("Backend:", response.data);
-  //   } catch (error) {
-  //     console.error("Error sending project:", error);
-  //   }
-  // };
 
   // ===========================
   // 🔹 PDF Download
@@ -126,16 +107,17 @@ export default function ChatbotF() {
 
       const authCode = res.data.auth_code;
 
-      // Open VS Code (no folder path)
-      // window.location.href =
-      //   `vscode://gaintclout.internapp-vscode-extension?auth=${authCode}`;
+    // ✅ Open VS Code extension first
+      window.location.href =
+        `vscode://gaintclout.internapp-vscode-extension?auth=${authCode}`;
 
-      // Navigate user to correct internship tasks
+      // ✅ Then navigate to internship page after short delay
       setTimeout(() => navigateByInternship(navigate), 1500);
+
 
     } catch (err) {
       console.error(err);
-      alert(". Please login again.");
+      alert("Session expired. Please login again.");
     }
   };
 
@@ -167,10 +149,7 @@ export default function ChatbotF() {
 
       {/* Heading + PDF Download */}
       <div className="absolute top-8 sm:top-10 right-4 sm:right-8 md:right-10 text-right max-w-[90%] sm:max-w-sm md:max-w-md">
-        {/* <h2 className="text-base sm:text-2xl md:text-3xl font-semibold text-[#2563eb] leading-snug bg-[#EBF2FF] rounded-full px-4 py-2 text-center">
-          Allocation Project & Tasks
-        </h2> */}
-{/* 🔹 Blink animation style */}
+        
 <style>
   {`
     @keyframes blinkEffect {
@@ -183,17 +162,6 @@ export default function ChatbotF() {
   `}
 </style>
 
-{/* <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mt-72 ml-20">
-  <a
-    href="http://127.0.0.1:8000/projects/materials/download/movie_recommendation_system_workflow.pdf"
-    className="blink-btn flex items-center gap-2 bg-[#2563eb] 
-               text-white text-sm sm:text-base font-medium 
-               px-4 sm:px-6 py-2 rounded-lg shadow transition-all"
-  >
-    Download PDF
-    <Download className="w-4 sm:w-5 h-4 sm:h-5" />
-  </a>
-</div> */}
 
       </div>
 
@@ -238,7 +206,7 @@ export default function ChatbotF() {
 
       {/* Video Section */}
  <video
-  src="/src/assets/chatbotflask.mp4"
+  src={chatbotFlaskVideo}
   autoPlay
   loop
   muted

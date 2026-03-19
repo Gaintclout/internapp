@@ -96,7 +96,7 @@ export default function AdminDashboardUser() {
   }
 
   return (
-    <div className="h- bg-[#ffffff] text-gray-800 flex flex-col md:flex-row">
+    <div className="min-h-screen bg-white text-gray-800 flex flex-col md:flex-row">
 
       {/* MOBILE HEADER */}
       <div className="md:hidden flex items-center justify-between px-4 py-3 bg-white border-b z-40">

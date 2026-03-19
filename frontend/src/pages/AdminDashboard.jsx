@@ -47,26 +47,23 @@ export default function AdminDashboard() {
     document.body.style.overflow = mobileMenuOpen ? "hidden" : "auto";
   }, [mobileMenuOpen]);
 
-const StatCard = ({ color, value, label, icon: Icon }) => (
-  <div className="flex items-center gap-4 bg-white rounded-2xl border border-gray-100 shadow-sm p-6 w-full">
-    
-    <div
-      className="h-12 w-12 rounded-xl flex items-center justify-center text-white text-xl"
-      style={{ backgroundColor: color }}
-    >
-      <Icon />
+  const StatCard = ({ color, value, label, icon: Icon }) => (
+    <div className="flex items-center gap-4 bg-white rounded-2xl border border-gray-100 shadow-sm p-6 w-full">
+      <div
+        className="h-12 w-12 rounded-xl flex items-center justify-center text-white text-xl"
+        style={{ backgroundColor: color }}
+      >
+        <Icon />
+      </div>
+      <div>
+        <div className="text-2xl font-bold text-gray-800">{value}</div>
+        <div className="text-gray-500 text-sm">{label}</div>
+      </div>
     </div>
-
-    <div>
-      <div className="text-2xl font-bold text-gray-800">{value}</div>
-      <div className="text-gray-500 text-sm">{label}</div>
-    </div>
-
-  </div>
-);
+  );
 
   return (
-    <div className="h-[70vh]  text-gray-800 flex flex-col md:flex-row">
+    <div className="h-[70vh] text-gray-800 flex flex-col md:flex-row">
 
       {/* ================= MOBILE HEADER ================= */}
       <div className="md:hidden flex items-center justify-between px-4 py-3 bg-white border-b z-40">
@@ -85,7 +82,8 @@ const StatCard = ({ color, value, label, icon: Icon }) => (
           />
           <aside className="w-64 bg-white h-full shadow-xl flex flex-col">
             <div className="flex items-center justify-between px-6 py-4 border-b">
-              <img src={Logo} alt="GAINT" className="h-8" />
+              {/* ✅ Fixed: was src={Logo} */}
+              <img src={logo} alt="GAINT" className="h-8" />
               <button onClick={() => setMobileMenuOpen(false)}>
                 <X size={22} />
               </button>
@@ -152,9 +150,10 @@ const StatCard = ({ color, value, label, icon: Icon }) => (
               className="w-full rounded-xl border border-gray-200 bg-white py-3 pl-10 pr-4 text-sm outline-none"
               placeholder="Search here"
             />
-<span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-lg">
-  <IoIosSearch />
-</span>          </div>
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-lg">
+              <IoIosSearch />
+            </span>
+          </div>
           <div className="flex justify-end">
             {!mobileMenuOpen && <AdminProfileMenu />}
           </div>
@@ -167,30 +166,26 @@ const StatCard = ({ color, value, label, icon: Icon }) => (
           </p>
         </div>
 
-      {/* <div className="grid grid-cols-3 gap-6"> */}
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-  <StatCard
-    icon={MdGroups2}
-    value={metrics.total_users}
-    label="Total Users"
-    color="#3498db"
-  />
-
-  <StatCard
-    icon={FaFolderOpen}
-    value={metrics.projects}
-    label="Active Projects"
-    color="#10b981"
-  />
-
-  <StatCard
-    icon={RiSecurePaymentFill}
-    value={`₹${metrics.amount_collected}`}
-    label="Payment Collected"
-    color="#3b82f6"
-  />
-
-</div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 px-4 md:px-6">
+          <StatCard
+            icon={MdGroups2}
+            value={metrics.total_users}
+            label="Total Users"
+            color="#3498db"
+          />
+          <StatCard
+            icon={FaFolderOpen}
+            value={metrics.projects}
+            label="Active Projects"
+            color="#10b981"
+          />
+          <StatCard
+            icon={RiSecurePaymentFill}
+            value={`₹${metrics.amount_collected}`}
+            label="Payment Collected"
+            color="#3b82f6"
+          />
+        </div>
       </main>
     </div>
   );

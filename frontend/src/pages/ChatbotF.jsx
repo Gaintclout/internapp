@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import logo from "../assets/logo.png";
-import BgImage from "/src/assets/bg-paper.png";
+import BgImage from "../assets/bg-paper.png";
 import { Download } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/axios";
@@ -95,10 +95,6 @@ export default function ChatbotF() {
 
       const authCode = res.data.auth_code;
 
-      // 2️⃣ Open VS Code (no folder path)
-      // window.location.href =
-      //   `vscode://gaintclout.internapp-vscode-extension?auth=${authCode}`;
-
       // 3️⃣ Redirect student to their internship task page
       setTimeout(() => navigateByInternship(), 1500);
 
@@ -156,17 +152,7 @@ export default function ChatbotF() {
               `}
             </style>
 
-            {/* 🔹 Download PDF Button */}
-          {/* <div className="mt-16">   
-            <button
-              onClick={handleDownloadPDF}
-              className="blink-btn flex items-center gap-2 bg-[#2563eb] text-white px-6 py-2 rounded-lg shadow"
-            >
-              Download PDF
-              <Download className="w-5 h-5" />
-            </button>
-          </div> */}
-
+          
           </div>
 
 
