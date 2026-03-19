@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { GraduationCap, User, Users } from "lucide-react";
 import logo from "../assets/logo.png";
-import BgImage from "/src/assets/bg-paper.png";
+import BgImage from "../assets/bg-paper.png";
 
 export default function Dashboard() {
   const roles = [
@@ -69,15 +69,6 @@ export default function Dashboard() {
           </div>
         ))}
 
-
-          {/* <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${BgImage})`,
-          transform: "rotate(-25deg)",
-          transformOrigin: "center",
-        }}
-      ></div>  */}
       </div>
     </div>
   );

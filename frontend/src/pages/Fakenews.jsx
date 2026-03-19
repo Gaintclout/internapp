@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import logo from "../assets/logo.png";
-import BgImage from "/src/assets/bg-paper.png";
+import BgImage from "../assets/bg-paper.png"; 
+import fakenewsImage from "../assets/Fakenews.png";
 import { Download } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/axios";
@@ -96,10 +97,7 @@ export default function Fakenews() {
 
       const authCode = res.data.auth_code;
 
-      // Open VS Code with no folder path
-      // window.location.href =
-      //   `vscode://gaintclout.internapp-vscode-extension?auth=${authCode}`;
-
+      
       // Redirect to correct internship task page
       setTimeout(() => navigateByInternship(), 1500);
 
@@ -132,10 +130,9 @@ export default function Fakenews() {
  
        {/* Heading + PDF Download */}
        <div className="absolute top-8 sm:top-10 right-4 sm:right-8 md:right-10 text-right max-w-[90%] sm:max-w-sm md:max-w-md">
-         {/* <h2 className="text-base sm:text-2xl md:text-3xl font-semibold text-[#2563eb] leading-snug bg-[#EBF2FF] rounded-full px-4 py-2 text-center">
+         <h2 className="text-base sm:text-2xl md:text-3xl font-semibold text-[#2563eb] leading-snug bg-[#EBF2FF] rounded-full px-4 py-2 text-center">
            Allocation Project & Tasks
-         </h2> */}
-        {/* 🔹 Blink animation style */}
+         </h2>
         <style>
           {`
             @keyframes blinkEffect {
@@ -148,17 +145,6 @@ export default function Fakenews() {
           `}
         </style>
  
-        {/* <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mt-72 ml-20">
-          <a
-            href="http://127.0.0.1:8000/projects/materials/download/movie_recommendation_system_workflow.pdf"
-            className="blink-btn flex items-center gap-2 bg-[#2563eb] 
-                        text-white text-sm sm:text-base font-medium 
-                        px-4 sm:px-6 py-2 rounded-lg shadow transition-all"
-          >
-            Download PDF
-            <Download className="w-4 sm:w-5 h-4 sm:h-5" />
-          </a>
-        </div> */}
  
        </div>
  
@@ -204,17 +190,17 @@ export default function Fakenews() {
         
               {/* Video Section */}
                 <img
-            src="/src/assets/Fakenews.png"
-            alt="Fake News Detector"
-            className="
-              absolute bottom-0
-              left-1/2 -translate-x-1/2
-              w-[90%] sm:w-[80%] md:w-[420px] lg:w-[500px]
-              h-auto
-              max-h-[200px] sm:max-h-[240px] md:max-h-[280px] lg:max-h-[320px]
-              object-contain
-              z-10
-            "
+              src={fakenewsImage}
+              alt="Fake News Detector"
+              className="
+                absolute bottom-0
+                left-1/2 -translate-x-1/2
+                w-[90%] sm:w-[80%] md:w-[420px] lg:w-[500px]
+                h-auto
+                max-h-[200px] sm:max-h-[240px] md:max-h-[280px] lg:max-h-[320px]
+                object-contain
+                z-10
+                  "
           />
 
             </div>
