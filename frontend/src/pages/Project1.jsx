@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import logo from "../assets/logo.png";
-import BgImage from "/src/assets/bg-paper.png";
+import BgImage from "../assets/bg-paper.png";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../api/axios";
 import ProfileMenu from "../components/ProfileMenu";

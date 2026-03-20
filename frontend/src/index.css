@@ -2,27 +2,111 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =============================
+   ROOT VARIABLES
+============================= */
 :root {
   --bg-icon: 0.08;
 }
-/* 
+
+/* =============================
+   BASE STYLES
+============================= */
 body {
-  background: radial-gradient(1200px 600px at 50% -10%, rgba(30,136,229,0.08), transparent),
-              linear-gradient(to bottom right, #f8fafc, #f1f5f9);
-} */
-
-@layer components{
-  .input{@apply w-full border rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-brand-primary/30 focus:border-brand-primary/60 bg-white;}
-  .btn-primary{@apply px-6 py-2.5 rounded-full bg-brand-primary text-white font-semibold shadow hover:opacity-95 transition;}
-  .btn-ghost{@apply w-full border rounded-full px-4 py-2 hover:bg-black/5;}
-  .chip{@apply px-4 py-2 rounded-full border bg-white hover:bg-blue-50 text-gray-700; }
+  @apply bg-gray-50 text-gray-800;
+  font-family: "Inter", sans-serif;
 }
 
+/* =============================
+   COMPONENTS
+============================= */
+@layer components {
 
+  /* INPUT */
+  .input {
+    @apply w-full border rounded-xl px-4 py-2.5 bg-white
+    focus:outline-none focus:ring-2 focus:ring-brand-primary/30
+    focus:border-brand-primary/60 transition;
+  }
+
+  /* PRIMARY BUTTON */
+  .btn-primary {
+    @apply px-6 py-2.5 rounded-full bg-brand-primary text-white font-semibold shadow
+    hover:opacity-90 active:scale-95 transition duration-200;
+  }
+
+  /* SECONDARY BUTTON */
+  .btn-secondary {
+    @apply px-6 py-2.5 rounded-full bg-gray-200 text-gray-800
+    hover:bg-gray-300 transition;
+  }
+
+  /* GHOST BUTTON */
+  .btn-ghost {
+    @apply w-full border rounded-full px-4 py-2
+    hover:bg-black/5 transition;
+  }
+
+  /* DISABLED BUTTON */
+  .btn-disabled {
+    @apply bg-gray-400 cursor-not-allowed text-white;
+  }
+
+  /* CHIP */
+  .chip {
+    @apply px-4 py-2 rounded-full border bg-white
+    hover:bg-blue-50 text-gray-700 transition;
+  }
+
+  /* CARD */
+  .card {
+    @apply bg-white rounded-2xl shadow-md p-6;
+  }
+
+  /* TABLE */
+  .table {
+    @apply w-full text-sm;
+  }
+
+  .table th {
+    @apply text-left p-3 bg-brand-primary text-white;
+  }
+
+  .table td {
+    @apply p-3 border-t;
+  }
+}
+
+/* =============================
+   ANIMATIONS
+============================= */
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
+
 .animate-fadeIn {
   animation: fadeIn 0.3s ease-out;
+}
+
+/* =============================
+   SCROLLBAR (🔥 PRO UI)
+============================= */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2563eb; /* or use brand-primary hex */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
 }

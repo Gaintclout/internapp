@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from "react";
 import { Upload, LogOut } from "lucide-react";
 import logo from "../assets/logo.png";
@@ -14,16 +12,17 @@ export default function Settings() {
   const [photo, setPhoto] = useState(null);
   const [bio, setBio] = useState("");
 
-  /* 🔹 LOAD USER FROM LOCAL STORAGE */
+  /* 🔹 LOAD USER */
   useEffect(() => {
     const stored = localStorage.getItem("user");
+
     if (!stored) return;
 
     try {
       const parsed = JSON.parse(stored);
       setUser(parsed);
-      setPhoto(parsed.photo || null);
-      setBio(parsed.bio || "");
+      setPhoto(parsed?.photo || null);
+      setBio(parsed?.bio || "");
     } catch {
       localStorage.removeItem("user");
     }
@@ -39,47 +38,51 @@ export default function Settings() {
       return;
     }
 
+    // 🔥 OPTIONAL: size limit (2MB)
+    if (file.size > 2 * 1024 * 1024) {
+      alert("Image must be less than 2MB");
+      return;
+    }
+
     const reader = new FileReader();
     reader.onloadend = () => {
-      setPhoto(reader.result); // base64
+      setPhoto(reader.result);
     };
     reader.readAsDataURL(file);
   };
 
-  /* 🔹 UPDATE PROFILE (BACKEND + LOCAL) */
-const handleUpdate = async (e) => {
-  e.preventDefault();
+  /* 🔹 UPDATE PROFILE */
+  const handleUpdate = async (e) => {
+    e.preventDefault();
 
-  if (!bio || bio.trim().length === 0) {
-    alert("⚠️ Please enter your bio before updating profile");
-    return;
-  }
+    if (!bio || bio.trim().length === 0) {
+      alert("⚠️ Enter your bio");
+      return;
+    }
 
-  try {
-    await api.put("/students/profile", {
-      photo,
-      bio,
-    });
+    try {
+      await api.put("/students/profile", {
+        photo,
+        bio,
+      });
 
-    const updatedUser = {
-      ...user,
-      photo,
-      bio,
-    };
+      const updatedUser = {
+        ...(user || {}),
+        photo,
+        bio,
+      };
 
-    localStorage.setItem("user", JSON.stringify(updatedUser));
-    setUser(updatedUser);
+      localStorage.setItem("user", JSON.stringify(updatedUser));
+      setUser(updatedUser);
 
-    // ✅🔥 THIS IS THE MISSING LINE
-    window.dispatchEvent(new Event("profile-updated"));
+      window.dispatchEvent(new Event("profile-updated"));
 
-    alert("Profile updated successfully ✅");
-  } catch (err) {
-    console.error("Profile update failed", err);
-    alert("Failed to update profile");
-  }
-};
-
+      alert("✅ Profile updated");
+    } catch (err) {
+      console.error(err);
+      alert("❌ Update failed");
+    }
+  };
 
   /* 🔹 RESET PROFILE */
   const handleReset = async () => {
@@ -89,34 +92,40 @@ const handleUpdate = async (e) => {
         bio: "",
       });
 
-      const resetUser = { ...user, photo: null, bio: "" };
+      const resetUser = {
+        ...(user || {}),
+        photo: null,
+        bio: "",
+      };
+
       localStorage.setItem("user", JSON.stringify(resetUser));
 
       setPhoto(null);
       setBio("");
       setUser(resetUser);
+
+      window.dispatchEvent(new Event("profile-updated"));
     } catch {
-      alert("Reset failed");
+      alert("❌ Reset failed");
     }
   };
 
   /* 🔹 LOGOUT */
   const handleLogout = () => {
-    localStorage.removeItem("user");
-    localStorage.removeItem("token");
-    localStorage.removeItem("student_token");
+    localStorage.clear(); // 🔥 better cleanup
     navigate("/studentlogin");
   };
 
   return (
-<div className="h-[70vh] bg-[#f7f9fc] flex">
-      {/* Sidebar */}
+    <div className="min-h-screen bg-[#f7f9fc] flex">
+
+      {/* SIDEBAR */}
       <aside className="w-64 bg-white shadow-sm p-6 flex flex-col justify-between">
         <div>
           <div className="flex items-center gap-2 mb-8">
-            <img src={logo} className="w-15 h-10" />
-            {/* <span className="font-semibold">GAINT</span> */}
+            <img src={logo} alt="logo" className="w-20" />
           </div>
+
           <p className="text-blue-600 font-medium">⚙ Settings</p>
         </div>
 
@@ -128,28 +137,33 @@ const handleUpdate = async (e) => {
         </button>
       </aside>
 
-      {/* Main */}
-      <main className="flex-1 p-10">
-        {/* Header */}
+      {/* MAIN */}
+      <main className="flex-1 p-6 md:p-10">
+
+        {/* HEADER */}
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-xl font-semibold">Settings</h1>
-
           <ProfileMenu />
         </div>
 
-        {/* Card */}
+        {/* CARD */}
         <div className="bg-white rounded-2xl shadow p-8 max-w-xl">
           <h2 className="text-red-500 font-medium mb-4">
             Account Setting
           </h2>
 
-          {/* Upload */}
+          {/* PHOTO */}
           <label className="w-28 h-28 border-2 border-dashed rounded-lg flex items-center justify-center cursor-pointer overflow-hidden">
             {photo ? (
-              <img src={photo} className="w-full h-full object-cover" />
+              <img
+                src={photo}
+                alt="profile"
+                className="w-full h-full object-cover"
+              />
             ) : (
               <Upload className="text-gray-400" />
             )}
+
             <input
               type="file"
               accept="image/*"
@@ -158,33 +172,35 @@ const handleUpdate = async (e) => {
             />
           </label>
 
-          {/* Bio */}
+          {/* BIO */}
           <div className="mt-6">
             <label className="text-sm text-gray-600">Bio</label>
             <textarea
               rows="4"
               value={bio}
               onChange={(e) => setBio(e.target.value)}
-              className="w-full mt-2 border rounded-lg px-4 py-2"
+              className="w-full mt-2 border rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
             />
           </div>
 
-          {/* Actions */}
+          {/* BUTTONS */}
           <div className="flex gap-4 mt-6">
             <button
               onClick={handleUpdate}
-              className="bg-red-500 text-white px-6 py-2 rounded-lg"
+              className="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600"
             >
               Update Profile
             </button>
+
             <button
               onClick={handleReset}
-              className="border px-6 py-2 rounded-lg"
+              className="border px-6 py-2 rounded-lg hover:bg-gray-100"
             >
               Reset
             </button>
           </div>
         </div>
+
       </main>
     </div>
   );

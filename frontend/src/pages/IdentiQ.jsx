@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import logo from "../assets/logo.png";
-import BgImage from "/src/assets/bg-paper.png";
+import BgImage from "../assets/bg-paper.png";
+import identiqImage from "../assets/IdentiQ.png";
 import { Download } from "lucide-react";
 import api from "../api/axios";
 import { Link, useNavigate } from "react-router-dom";
@@ -199,11 +200,10 @@ useEffect(() => {
  
        {/* IMAGE */}
        <img
-        src="/src/assets/IdentiQ.png"
+        src={identiqImage}
         alt="IdentiQ"
-    className="absolute bottom-0 left-1/2 -translate-x-1/2
-             w-[400px] h-[320px]
-             object-contain z-10 "       />
+        className="absolute bottom-0 left-1/2 -translate-x-1/2
+                   w-[400px] h-[320px] object-contain z-10"       />
      </div>
    );
  }

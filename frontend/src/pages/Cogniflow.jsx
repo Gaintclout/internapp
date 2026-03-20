@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
 import logo from "../assets/logo.png";
-import BgImage from "/src/assets/bg-paper.png";
+import BgImage from "../assets/bg-paper.png";
+import cogniflowImage from "../assets/cogniflow.png";
 import { Download } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 import api from "../api/axios";
 import { Link } from "react-router-dom";
 import ProfileMenu from "../components/ProfileMenu";
@@ -96,10 +95,7 @@ export default function Cogniflow() {
 
       const authCode = res.data.auth_code;
 
-      // Open VS Code with NO PATH
-      // window.location.href =
-      //   `vscode://gaintclout.internapp-vscode-extension?auth=${authCode}`;
-
+     
       // Redirect user to correct tasks page
       setTimeout(() => navigateByInternship(), 1500);
 
@@ -153,18 +149,7 @@ export default function Cogniflow() {
             `}
           </style>
  
-          {/* <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mt-72 ml-20">
-            <a
-              href="http://127.0.0.1:8000/projects/materials/download/movie_recommendation_system_workflow.pdf"
-              className="blink-btn flex items-center gap-2 bg-[#2563eb] 
-                          text-white text-sm sm:text-base font-medium 
-                          px-4 sm:px-6 py-2 rounded-lg shadow transition-all"
-            >
-              Download PDF
-              <Download className="w-4 sm:w-5 h-4 sm:h-5" />
-            </a>
-          </div> */}
-          
+                    
             </div>
       
             {/* Main Content */}

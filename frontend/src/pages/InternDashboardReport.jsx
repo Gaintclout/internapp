@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // 
 import { Download,MessageCircle } from "lucide-react";
 import logo from "../assets/logo.png";
-import Background from "/src/assets/bg-paper.png";
+import Background from "../assets/bg-paper.png";
 
 const reports = [
   { days: "01 to 15", dates: "01/09/2025 - 15/09/2025" },

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import logo from "../assets/logo.png";
-import BgImage from "/src/assets/bg-paper.png";
+import BgImage from "../assets/bg-paper.png";
+import hiresenseImage from "../assets/Hiresense.png";
 import { Download } from "lucide-react";
 import api from "../api/axios";
 import { Link, useNavigate } from "react-router-dom";
@@ -112,10 +113,7 @@ export default function HireSense() {
 
       const authCode = res.data.auth_code;
 
-      // Open VS Code (no folder path)
-      // window.location.href =
-      //   `vscode://gaintclout.internapp-vscode-extension?auth=${authCode}`;
-
+     
       // Navigate user to correct internship tasks
       setTimeout(() => navigateByInternship(navigate), 1500);
 
@@ -152,12 +150,7 @@ export default function HireSense() {
       {/* RIGHT PANEL */}
       <div className="absolute top-8 right-8 text-right">
 
-        {/* Title */}
-        {/* <h2 className="text-2xl font-semibold text-[#2563eb] bg-[#EBF2FF] rounded-full px-4 py-2">
-          Allocation Project & Tasks
-        </h2> */}
-
-        {/* Blink CSS */}
+        
         <style>
           {`
             @keyframes blinkEffect {
@@ -169,11 +162,7 @@ export default function HireSense() {
             }
           `}
         </style>
-
  
-
-    
-
       </div>
 
       {/* MAIN CONTENT */}
@@ -216,11 +205,10 @@ export default function HireSense() {
 
       {/* IMAGE */}
       <img
-        src="/src/assets/Hiresense.png"
+        src={hiresenseImage}
         alt="HireSense"
         className="absolute bottom-0 left-1/2 -translate-x-1/2
-             w-[400px] h-[290px]
-             object-contain z-10 " 
+                   w-[400px] h-[290px] object-contain z-10"
          />
     </div>
   );

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import logo from "../assets/logo.png";
-import LoginVector from "/src/assets/login.png";
-import LinkedinIcon from "/src/assets/linkedin.png";
+import LoginVector from "../assets/login.png";
+import LinkedinIcon from "../assets/linkedin.png";
 import { GoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
 import api from "../api/axios";
@@ -72,17 +72,6 @@ const handleClick = async () => {
   }
 };
 
-  // Google Login
-  // const handleGoogleSuccess = (response) => {
-  //   console.log("Google token:", response.credential);
-  //   alert("Google Login Successful!");
-  //   navigate("/preferences");
-  // };
-
-  // const handleGoogleError = () => {
-  //   alert("Google Login Failed. Try again.");
-  // };
-
 // Google Login
 const handleGoogleSuccess = async (response) => {
   try {
@@ -110,20 +99,6 @@ const handleGoogleError = () => {
 };
 
 
-  // LinkedIn Login
-  // const handleLinkedInLogin = () => {
-  //   const clientId = import.meta.env.VITE_LINKEDIN_CLIENT_ID;
-  //   const redirectUri = import.meta.env.VITE_LINKEDIN_REDIRECT_URI;
-  //   const scope = "r_liteprofile r_emailaddress";
-  //   const state = "987654321";
-
-  //   window.location.href =
-  //     `https://www.linkedin.com/oauth/v2/authorization?response_type=code
-  //     &client_id=${clientId}
-  //     &redirect_uri=${redirectUri}
-  //     &scope=${scope}
-  //     &state=${state}`;
-  // };
 
   return (
     <div className="h-[70vh] flex items-center justify-center px-4">
@@ -215,41 +190,11 @@ const handleGoogleError = () => {
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
               <GoogleLogin onSuccess={handleGoogleSuccess} onError={handleGoogleError} size="large" shape="pill" />
 
-           {/* <button
-            type="button"
-            onClick={handleLinkedInLogin}
-            className="
-              flex items-center justify-center gap-3
-              bg-white
-              border border-gray-300
-              rounded-full
-              h-[40px]
-              w-full sm:w-[260px]
-              px-5
-              text-sm font-medium text-gray-600
-              hover:bg-gray-50
-              transition
-              whitespace-nowrap
-            "
-          >
-            <img
-              src={LinkedinIcon}
-              alt="LinkedIn"
-              className="w-5 h-5"
-            />
-            <span>Sign in with LinkedIn</span>
-          </button> */}
+           
 
             </div>
 
-            {/* Sign Up */}
-            {/* <p className="text-center text-gray-600 text-sm mt-6">
-              No Account yet?{" "}
-              <a href="./register" className="text-[#2563eb] font-semibold">
-                Sign up
-              </a>
-            </p> */}
-
+            
           </form>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import logo from "../assets/logo.png";
-import BgImage from "/src/assets/bg-paper.png";
+import BgImage from "../assets/bg-paper.png";
+import mediaImage from "../assets/Media.png";
 import { Download } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/axios";
@@ -196,7 +197,8 @@ export default function Media() {
  
        {/* Video Section */}
    <img
-        src="/src/assets/Media.png"
+        
+        src={mediaImage}
         alt="Media"
         className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-[600px] object-contain"
       />
