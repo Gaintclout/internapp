@@ -10,6 +10,6 @@ COPY . .
 
 RUN chmod -R 755 /app/node_modules
 
-EXPOSE 5174
+EXPOSE 5173
 
 CMD ["npm","run","dev"]
